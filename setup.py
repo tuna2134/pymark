@@ -31,8 +31,6 @@ class CMakeBuild(build_ext):
 		ext.libraries = ["cmark"]
 		ext.include_dirs = [str(build_tmp)]
 		ext.library_dirs = [str(build_tmp)]
-		print(build_tmp)
-		
 
 
 setup(
