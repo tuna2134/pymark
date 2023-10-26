@@ -1,0 +1,8 @@
+venv
+CMakeFiles
+CMakeCache.txt
+cmake_install.cmake
+build
+*.so
+*.egg-info
+__pycache__
