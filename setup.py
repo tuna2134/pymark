@@ -7,7 +7,7 @@ from pathlib import Path
 
 class CMakeExtension(Extension):
 	def __init__(self, name, sourcedir=""):
-		super().__init__(name, sources=[])
+		super().__init__(name, sources=[], libraries=["cmark"])
 		self.sourcedir = os.path.abspath(sourcedir)
 
 
