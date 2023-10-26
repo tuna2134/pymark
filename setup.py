@@ -6,8 +6,8 @@ from pathlib import Path
 
 
 class CMakeExtension(Extension):
-	def __init__(self, name, sourcedir=""):
-		super().__init__(name, sources=[], libraries=["cmark"])
+	def __init__(self, name, sourcedir="", **kwargs):
+		super().__init__(name, sources=[])
 		self.sourcedir = os.path.abspath(sourcedir)
 
 
@@ -28,6 +28,9 @@ class CMakeBuild(build_ext):
         ]
 		subprocess.run(["cmake", ext.sourcedir] + cmake_args, cwd=build_tmp, check=True)
 		subprocess.run(["cmake", "--build", "."] + build_args, cwd=build_tmp, check=True)
+		ext.libraries = ["cmark"]
+		ext.include_dirs = [str(build_tmp)]
+		ext.library_dirs = [str(build_tmp)]
 		print(build_tmp)
 		
 
