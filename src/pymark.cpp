@@ -7,7 +7,10 @@ int add(int i, int j) {
 }
 
 char *convert(char *markdown) {
-    return cmark_markdown_to_html(markdown, strlen(markdown), 0);
+    char *html = cmark_markdown_to_html(markdown, strlen(markdown), 0);
+    std::string result(html);
+    free(html);
+    return result;
 }
 
 PYBIND11_MODULE(pymark, m) {
