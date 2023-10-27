@@ -19,7 +19,7 @@ jobs:
         submodules: 'true'
     - uses: actions/setup-python@v4
       with:
-        python_version: ${{ matrix.target }}
+        python-version: ${{ matrix.target }}
     - name: Install wheel
       run: pip3 install wheel
     - name: Compile package
