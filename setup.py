@@ -38,6 +38,7 @@ setup(
     description="A Python markdown parser",
     author="tuna2134",
     author_email="me@tuna2134.dev",
+    packages=["pymark"],
     ext_modules=[CMakeExtension("pymark")],
     cmdclass={"build_ext": CMakeBuild},
     zip_safe=False,
