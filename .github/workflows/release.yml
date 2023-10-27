@@ -21,7 +21,7 @@ jobs:
       with:
         python-version: ${{ matrix.target }}
     - name: Install wheel
-      run: pip3 install wheel
+      run: pip3 install wheel setuptools
     - name: Compile package
       run: python3 setup.py bdist_wheel
     - name: Upload sdist
