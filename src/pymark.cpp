@@ -6,7 +6,7 @@ int add(int i, int j) {
     return i + j;
 }
 
-char *convert(char *markdown) {
+std::string convert(char *markdown) {
     char *html = cmark_markdown_to_html(markdown, strlen(markdown), 0);
     std::string result(html);
     free(html);
