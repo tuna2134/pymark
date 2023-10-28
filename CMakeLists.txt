@@ -6,4 +6,4 @@ add_subdirectory(extern/cmark)
 link_libraries(cmark)
 
 add_subdirectory(extern/pybind11)
-pybind11_add_module(pymark src/pymark.cpp)
+pybind11_add_module(_pymark src/pymark.cpp)

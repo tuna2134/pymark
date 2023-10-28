@@ -39,7 +39,7 @@ setup(
     author="tuna2134",
     author_email="me@tuna2134.dev",
     packages=["pymark"],
-    ext_modules=[CMakeExtension("pymark")],
+    ext_modules=[CMakeExtension("pymark._pymark")],
     cmdclass={"build_ext": CMakeBuild},
     zip_safe=False,
 )

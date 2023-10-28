@@ -8,7 +8,7 @@ std::string convert(char *markdown) {
     return result;
 }
 
-PYBIND11_MODULE(pymark, m) {
+PYBIND11_MODULE(_pymark, m) {
     m.doc() = "cmark python extension library"; // optional module docstring
 
     m.def("convert", &convert, "Convert markdown to html");

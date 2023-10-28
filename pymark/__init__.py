@@ -1,4 +1,4 @@
-from .pymark import convert
+from ._pymark import convert
 
 
 __all__ = ("convert",)
