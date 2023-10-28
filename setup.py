@@ -15,7 +15,6 @@ class CMakeBuild(build_ext):
     def build_extension(self, ext: CMakeExtension) -> None:
         build_tmp = Path(self.build_temp)
         build_tmp.mkdir(parents=True, exist_ok=True)
-        # aise Exception(build_tmp)
         extdir = Path(self.get_ext_fullpath(ext.name))
         config = "Debug" if self.debug else "Release"
         cmake_args = [
