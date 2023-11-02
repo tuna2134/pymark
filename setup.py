@@ -26,7 +26,7 @@ class CMakeBuild(build_ext):
         subprocess.run(
             ["cmake", "--build", "."] + build_args, cwd=build_tmp, check=True
         )
-        ext.libraries = ["cmark"]
+        ext.libraries = ["libcmark"]
         ext.include_dirs = [str(build_tmp)]
         ext.library_dirs = [str(build_tmp)]
 
