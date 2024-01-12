@@ -27,7 +27,7 @@ jobs:
     - name: Upload sdist
       uses: actions/upload-artifact@v4
       with:
-        name: dist-${{ matrix.os }}-${{ matrix.python-version }}
+        name: dist-${{ matrix.target }}
         path: dist
   upload:
     runs-on: ubuntu-latest
