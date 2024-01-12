@@ -38,6 +38,7 @@ jobs:
         pattern: dist-*
         merge-multiple: true
         path: dist
+    - run: ls -a
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
