@@ -5,7 +5,7 @@ add_compile_options(-O2)
 
 # add cmark
 add_subdirectory(extern/cmark)
-add_library(cmark STATIC ...)
+add_library(cmark STATIC IMPORTED)
 set_target_properties(cmark PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
 add_subdirectory(extern/pybind11)
