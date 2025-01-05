@@ -27,17 +27,10 @@ class CMakeBuild(build_ext):
         subprocess.run(["cmake", ext.sourcedir] + cmake_args, cwd=build_tmp, check=True)
         subprocess.run(["cmake", "--build", "."] + build_args, cwd=build_tmp, check=True)
 
-        self._move_shared_library(extdir, build_tmp)
-
-    def _move_shared_library(self, extdir: Path, build_tmp: Path):
-        """共有ライブラリ (libcmark.so) をパッケージディレクトリにコピー"""
-        shared_lib = build_tmp / "libcmark.so"
-        if not shared_lib.exists():
-            raise RuntimeError(f"{shared_lib} does not exist. Check your CMake setup.")
-
-        target_lib = extdir / "libcmark.so"
-        shared_lib.replace(target_lib)
-        print(f"Copied {shared_lib} -> {target_lib}")
+        libcmark_path = extdir / "libcmark.so"
+        if not libcmark_path.exists():
+            raise RuntimeError(f"{libcmark_path} does not exist. Check your CMake setup.")
+        print(f"libcmark.so found at {libcmark_path}")
 
 
 setup(
