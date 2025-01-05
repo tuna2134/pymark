@@ -14,3 +14,7 @@ add_subdirectory(extern/pybind11)
 pybind11_add_module(_pymark src/pymark.cpp)
 
 target_link_libraries(_pymark PRIVATE cmark)
+
+install(TARGETS cmark
+    LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/pymark
+)
